@@ -50,6 +50,6 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 5. Open a pull request.
 
 ## 📄License
-This project is licensed under the MIT License - see the LICENSE.txt file for details.
+This Project is licensed under the [MIT License](LICENSE.md), so you're welcome to use and share the content as you see fit.
 
 Happy Learning! 📚🚀
