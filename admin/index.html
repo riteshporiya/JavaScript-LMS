@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Admin Dashboard</title>
+</head>
+
+<body onload="checkLogin()">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <!-- Container wrapper -->
+        <div class="container">
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="javascript:void(0)">Dashboard</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+
+                <div class="d-flex align-items-center">
+                    <span class="navbar-text text-white" id="loginUserName">
+
+                    </span>
+                    <button type="button" onclick="logout()" class="btn btn-link px-3 me-2">
+                        Logout
+                    </button>
+                </div>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+
+    <div class="container mt-5">
+        <div class="card text-center">
+            <div class="card-header">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#students">Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#displayCourses">Display Courses</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="card-body">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="students" class="container tab-pane active"><br>
+                    </div>
+                    <div id="courses" class="container tab-pane fade"><br>
+                        <div class="d-none alert alert-success" role="alert" id="courseAlert">
+                            Course has successfully Registered.
+                        </div>
+                        <div class="d-none alert alert-danger" role="alert" id="courseExitAlert">
+                            Course has Already Exits.
+                        </div>
+                        <form name="course" class="needs-validation" novalidate onsubmit="return false">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="courseName">Name</label>
+                                        <input type="text" name="courseName" required id="courseName" class="form-control" />
+                                        <div class="invalid-feedback">
+                                            Please Enter Course Name.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="courseType">Type</label>
+                                        <input type="text" name="courseType" required id="courseType" class="form-control" />
+                                        <div class="invalid-feedback">
+                                            Please Enter Course Type.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="courseImage">Image (Paste Online Image Link )</label><span class="text-danger"> (Ex., https://d3j0t7vrtr92dk.cloudfront.net/rapidops/1547568400_www_icon.png)</span>
+                                        <input type="text" name="courseImage" required id="courseImage" class="form-control" />
+                                        <div class="invalid-feedback">
+                                            Please Enter Course Image.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="courseDescription">Description</label>
+                                        <textarea name="courseDescription" required id="courseDescription" class="form-control"></textarea>
+                                        <div class="invalid-feedback">
+                                            Please Enter Course Description.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br> <br>
+                            <!-- Submit button -->
+                            <button type="button" id="btnCourse" class="btn btn-primary btn-md btn-block">Submit</button>
+                        </form>
+                    </div>
+                    <div id="displayCourses" class="container tab-pane fade"><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="admin.js"></script>
+
+</html>

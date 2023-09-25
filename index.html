@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .divider:after,
+        .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <section class="vh-100">
+            <div class="container py-5 h-100">
+              <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">Register</p>
+                    </div>
+                    <div class="d-none alert alert-success" role="alert" id="registerAlert">
+                        User has successfully Registered.
+                    </div>
+                    <div class="d-none alert alert-danger" role="alert" id="registerExitAlert">
+                        User has Already Registered By Same Name and Type.
+                    </div>
+                    <form name="register" onsubmit="return false" novalidate class="needs-validation">
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="userName">UserName</label>
+                            <input type="text" id="userName" name="userName" class="form-control form-control-lg" required min="6" autocomplete="off" />
+                            <div class="invalid-feedback" id="userNameErrorMessage">
+                                Please Enter User Name.
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" required autocomplete="off"/>
+                            <div class="invalid-feedback">
+                                Please Enter Password.
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="cPassword">Confirm Password</label>
+                            <input type="password" id="cPassword" name="cPassword" class="form-control form-control-lg" required autocomplete="off"/>
+                            <div class="invalid-feedback" id="cPasswordErrorMessage">
+                                Please Enter Confirm Password.
+                            </div>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="registerAdmin">Admin</label>
+                            <input class="form-check-input" type="radio" name="registerRadioOptions" id="registerAdmin" value="0">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="registerStudent">Student</label>
+                            <input class="form-check-input" type="radio" name="registerRadioOptions" id="registerStudent" checked value="1">
+                        </div>
+                        <br> <br>
+                        <!-- Submit button -->
+                        <button type="button" name="btnRegister" id="btnRegister" class="btn btn-primary btn-lg btn-block"">Register</button>
+                    </form>
+                </div>
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">Login</p>
+                    </div>
+                    <div class="d-none alert alert-danger" role="alert" id="loginAlert">
+                        User does not exits.
+                    </div>
+                    <form name="login" class="needs-validation" novalidate onsubmit="return false">
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="loginUserName">User Name</label>
+                            <input type="text" name="loginUserName" required id="loginUserName" autocomplete="off" class="form-control form-control-lg" />
+                            <div class="invalid-feedback">
+                                Please Enter User Name.
+                            </div>
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="loginPassword">Password</label>
+                            <input type="password" name="loginPassword" required id="loginPassword" autocomplete="off" class="form-control form-control-lg" />
+                            <div class="invalid-feedback">
+                                Please Enter Password.
+                            </div>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="admin">Admin</label>
+                            <input class="form-check-input" type="radio" name="loginRadioOptions" id="admin" value="0">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="student">Student</label>
+                            <input class="form-check-input" type="radio" name="loginRadioOptions" id="student" checked value="1">
+                        </div>
+                        <br> <br>
+                        <!-- Submit button -->
+                        <button type="button" id="btnLogin" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
