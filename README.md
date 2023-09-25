@@ -26,7 +26,7 @@ This is a simple Learning Management System (LMS) project built using JavaScript
 1. Clone or download this repository to your local machine. 📂
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/riteshporiya/JavaScript-LMS.git
 ```
 
 2. Open the project directory in your preferred code editor.
